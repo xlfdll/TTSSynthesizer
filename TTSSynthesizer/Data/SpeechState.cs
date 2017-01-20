@@ -127,6 +127,7 @@ namespace TTSSynthesizer
         }
         private void SpeechSynthesizer_SpeakProgress(object sender, SpeakProgressEventArgs e)
         {
+            this.SpeakingTextIndex += this.SpeakingText.Length; 
             this.SpeakingText = e.Text;
             this.SpeakingTextIndex = this.Text.IndexOf(this.SpeakingText, this.SpeakingTextIndex);
         }
