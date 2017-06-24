@@ -28,25 +28,43 @@
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+        <TextBox x:Name="ContentTextBox" Grid.Row="0" Text="{Binding Path=Text, UpdateSourceTrigger=PropertyChanged}"
+                 AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=State}" Value="Speaking">
+                            <Setter Property="IsReadOnly" Value="True"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=State}" Value="Paused">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+
+                    <Setter Property="Margin" Value="5"/>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+
+        <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
 
-            <GroupBox Grid.Row="0" Header="Controls">
-                <Grid>
+            <GroupBox Grid.Row="0" Grid.Column="0" Header="Controls">
+                <Grid VerticalAlignment="Center">
                     <Grid.Resources>
                         <Style TargetType="StackPanel">
                             <Setter Property="Margin" Value="3"/>
                             <Setter Property="Orientation" Value="Horizontal"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
                         <Style TargetType="TextBlock">
                             <Setter Property="Margin" Value="3"/>
@@ -131,7 +149,7 @@
                     </StackPanel>
                 </Grid>
             </GroupBox>
-            <GroupBox Grid.Row="1" Header="Settings">
+            <GroupBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Header="Settings">
                 <Grid>
                     <Grid.Resources>
                         <Style TargetType="Grid">
@@ -162,7 +180,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition/>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="25"/>
                     </Grid.ColumnDefinitions>
 
                     <Label Grid.Row="0" Grid.Column="0" Content="_Voice"/>
@@ -179,7 +197,7 @@
                     <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding Path=VoiceVolume}"/>
                 </Grid>
             </GroupBox>
-            <GroupBox Grid.Row="2" Header="Infomation">
+            <GroupBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Header="Infomation">
                 <Grid>
                     <Grid.Resources>
                         <Style TargetType="Grid">
@@ -221,27 +239,10 @@
                     <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding Path=State}"/>
                 </Grid>
             </GroupBox>
+            <Button Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom"
+                    Command="{x:Static local:GeneralCommands.AboutCommand}">
+                <Image Source="{StaticResource AboutIcon}"/>
+            </Button>
         </Grid>
-        <TextBox x:Name="ContentTextBox" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"
-                 AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
-                 Text="{Binding Path=Text, UpdateSourceTrigger=PropertyChanged}">
-            <TextBox.Style>
-                <Style TargetType="TextBox">
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Path=State}" Value="Speaking">
-                            <Setter Property="IsReadOnly" Value="True"/>
-                        </DataTrigger>
-                        <DataTrigger Binding="{Binding Path=State}" Value="Paused">
-                            <Setter Property="IsEnabled" Value="False"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-
-                    <Setter Property="Margin" Value="5"/>
-                </Style>
-            </TextBox.Style>
-        </TextBox>
-        <Button Grid.Row="1" Grid.Column="0" Command="{x:Static local:GeneralCommands.AboutCommand}">
-            <Image Source="{StaticResource AboutIcon}"/>
-        </Button>
     </Grid>
 </Window>
