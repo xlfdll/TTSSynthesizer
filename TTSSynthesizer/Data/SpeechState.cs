@@ -76,39 +76,19 @@ namespace TTSSynthesizer
 
 		public String Text
 		{
-			get
-			{
-				return _text;
-			}
-			set
-			{
-				SetField<String>(ref _text, value);
-			}
+			get => _text;
+			set => SetField<String>(ref _text, value);
 		}
 
 		public String SpeakingText
 		{
-			get
-			{
-				return _speakingText;
-			}
-
-			private set
-			{
-				SetField<String>(ref _speakingText, value);
-			}
+			get => _speakingText;
+			private set => SetField<String>(ref _speakingText, value);
 		}
 		public Int32 SpeakingTextIndex
 		{
-			get
-			{
-				return _speakingTextIndex;
-			}
-
-			private set
-			{
-				SetField<Int32>(ref _speakingTextIndex, value);
-			}
+			get => _speakingTextIndex;
+			private set => SetField<Int32>(ref _speakingTextIndex, value);
 		}
 
 		private void SpeechSynthesizer_StateChanged(object sender, StateChangedEventArgs e)
