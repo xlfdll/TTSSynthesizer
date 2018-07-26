@@ -63,7 +63,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\Dialogs\AboutWindow.xaml">
+    <Page Include="..\XDLibrary\Xlfdll.Windows.Presentation\Dialogs\AboutWindow.xaml">
       <Link>Base\Windows\Presentation\Dialogs\AboutWindow.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -72,20 +72,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="..\..\XDLibrary\Xlfdll.Core\Diagnostics\AssemblyMetadata.cs">
+    <Compile Include="..\XDLibrary\Xlfdll.Core\Diagnostics\AssemblyMetadata.cs">
       <Link>Base\Diagnostics\AssemblyMetadata.cs</Link>
     </Compile>
-    <Compile Include="..\..\XDLibrary\Xlfdll.Core\Infrastructure\ObservableObject.cs">
+    <Compile Include="..\XDLibrary\Xlfdll.Core\Infrastructure\ObservableObject.cs">
       <Link>Base\ObservableObject.cs</Link>
     </Compile>
-    <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\ApplicationPackUri.cs">
+    <Compile Include="..\XDLibrary\Xlfdll.Windows.Presentation\ApplicationPackUri.cs">
       <Link>Base\Windows\Presentation\ApplicationPackUri.cs</Link>
     </Compile>
-    <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\Dialogs\AboutWindow.xaml.cs">
+    <Compile Include="..\XDLibrary\Xlfdll.Windows.Presentation\Dialogs\AboutWindow.xaml.cs">
       <Link>Base\Windows\Presentation\Dialogs\AboutWindow.xaml.cs</Link>
       <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\RelayCommand.cs">
+    <Compile Include="..\XDLibrary\Xlfdll.Windows.Presentation\RelayCommand.cs">
       <Link>Base\Windows\Presentation\RelayCommand.cs</Link>
     </Compile>
     <Compile Include="App.xaml.cs">
