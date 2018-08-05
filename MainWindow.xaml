@@ -1,0 +1,74 @@
+﻿<Window x:Class="TTSSynthesizerWPF.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Text-to-Speech Synthesizer WPF Edition" Width="720" Height="416" WindowStyle="ThreeDBorderWindow" ResizeMode="CanMinimize" Loaded="Window_Loaded" AllowDrop="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3.5*" />
+            <RowDefinition Height="4.5*" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="2" Margin="0,14,0,0" Name="copyrightLabel" HorizontalAlignment="Left">
+            <TextBlock>© 2009 Xlfdll Workstation</TextBlock>
+        </Label>
+        <Button HorizontalAlignment="Right" Margin="0,16,3,3" Name="quitButton" Width="75" Grid.Row="2" Click="quitButton_Click">Exit</Button>
+        <GroupBox Header="Voice Settings" Margin="-1,-2,6,0" Name="voiceGroupBox">
+            <Grid>
+                <Label Height="28" HorizontalAlignment="Left" Margin="6,6,0,0" Name="voiceLabel" VerticalAlignment="Top" Width="40.8">Voice</Label>
+                <ComboBox Margin="66,10,6,0" Name="voiceComboBox" Height="24" VerticalAlignment="Top" SelectionChanged="voiceComboBox_SelectionChanged" />
+                <Label Margin="6,40,0,52" Name="rateLabel" HorizontalAlignment="Left" Width="36.52">Rate</Label>
+                <Label Margin="6,0,0,18" Name="volumeLabel" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="28" Width="53.647">Volume</Label>
+                <Slider Margin="66,45,6,54" Name="rateSlider" ValueChanged="rateSlider_ValueChanged" Maximum="10" Minimum="-10" Value="0" SmallChange="1" AutoToolTipPlacement="BottomRight" TickPlacement="BottomRight" />
+                <Slider Margin="66,0,6,18" Name="volumeSlider" ValueChanged="volumeSlider_ValueChanged" SmallChange="1" Value="100" Maximum="100" Height="25" VerticalAlignment="Bottom" AutoToolTipPlacement="BottomRight" TickPlacement="BottomRight" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.Row="1" Header="Voice Character Info" Name="voiceInfoGroupBox" Margin="0,0,6,0">
+            <Grid></Grid>
+        </GroupBox>
+        <Grid Margin="6,19,6,6" Name="grid1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Label Name="voiceNameHelpLabel">Name</Label>
+            <Label Grid.Row="1" Margin="0,0,170.5,0" Name="voiceDescHelpLabel" Grid.ColumnSpan="2">Description</Label>
+            <Label Grid.Row="2" Name="voiceCultureHelpLabel">Culture</Label>
+            <Label Grid.Row="3" Name="voiceGenderHelpLabel">Gender</Label>
+            <Label Name="voiceNameLabel" Grid.Column="1"></Label>
+            <Label Margin="1,0,2,0" Name="voiceAgeHelpLabel" Grid.Row="4">Age</Label>
+            <Label Name="voiceDescLabel" Grid.Column="1" Grid.Row="1"></Label>
+            <Label Name="voiceCultureLabel" Grid.Column="1" Grid.Row="2"></Label>
+            <Label Name="voiceGenderLabel" Grid.Column="1" Grid.Row="3"></Label>
+            <Label Name="voiceAgeLabel" Grid.Column="1" Grid.Row="4"></Label>
+        </Grid>
+        <TextBox Grid.Column="1" Grid.Row="2" Margin="0,16,169,2" Name="wordsIndexTextBox" IsReadOnly="True" HorizontalAlignment="Right" Width="30" />
+        <StackPanel Grid.Column="1" Grid.Row="2" Margin="3,14,0,1" Name="stackPanel1" HorizontalAlignment="Left" Width="71" Orientation="Horizontal">
+            <ToggleButton Height="23" Name="playToggleButton" Checked="playToggleButton_Checked" Unchecked="playToggleButton_Unchecked">
+                <Image Source="pack://application:,,,/Resources/play.png" />
+            </ToggleButton>
+            <Button Height="23" Name="stopButton" Click="stopButton_Click" IsEnabled="False">
+                <Image Source="pack://application:,,,/Resources/stop.png" />
+            </Button>
+            <Button Height="23" Name="recordButton" Click="recordButton_Click">
+                <Image Source="pack://application:,,,/Resources/record.png" />
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="2" Margin="0,15,0,1" Name="contentStackPanel" Orientation="Horizontal" HorizontalAlignment="Right" Width="131.2">
+            <CheckBox Name="ssmlCheckBox" Width="54" Height="16" Checked="ssmlCheckBox_CheckedStateChanged" Unchecked="ssmlCheckBox_CheckedStateChanged">SSML</CheckBox>
+            <Button Name="loadButton" Width="75" Click="loadButton_Click">Load...</Button>
+        </StackPanel>
+        <Button HorizontalAlignment="Right" Margin="0,16,84,3" Name="resetButton" Width="75" Click="resetButton_Click" Grid.Row="2">Reset</Button>
+        <TextBox Name="contentTextBox" Grid.RowSpan="2" TextWrapping="Wrap" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="285" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" DragEnter="contentTextBox_DragEnter" Drop="contentTextBox_Drop" AllowDrop="True">Enter text here or Load a file.</TextBox>
+    </Grid>
+</Window>
