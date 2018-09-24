@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.Speech.Synthesis;
 using System.Windows.Input;
 
-using Xlfdll.Core;
+using Xlfdll;
 
 namespace TTSSynthesizer
 {
