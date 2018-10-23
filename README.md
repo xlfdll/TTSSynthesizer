@@ -21,3 +21,6 @@ A Text-to-Speech (TTS) synthesizer user interface
 
 ## Development Prerequisites
 * Visual Studio 2015+
+
+## External Sources
+Icons are from [Modern UI Icons](http://modernuiicons.com/), which are licensed under [CC BY-ND 3.0](https://github.com/Templarian/WindowsIcons/blob/master/WindowsPhone/license.txt).
