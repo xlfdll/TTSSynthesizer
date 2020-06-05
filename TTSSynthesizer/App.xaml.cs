@@ -1,5 +1,7 @@
 ﻿using System.Windows;
 
+using Xlfdll.Diagnostics;
+
 namespace TTSSynthesizer
 {
     /// <summary>
@@ -11,5 +13,8 @@ namespace TTSSynthesizer
         {
             SpeechState.Current.Dispose();
         }
+
+        public static AssemblyMetadata Metadata => AssemblyMetadata.EntryAssemblyMetadata;
+        public static new MainWindow MainWindow => Application.Current.MainWindow as MainWindow;
     }
 }

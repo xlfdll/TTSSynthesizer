@@ -14,8 +14,7 @@ namespace TTSSynthesizer
                 delegate
                 {
                     AboutWindow aboutWindow = new AboutWindow
-                    (ApplicationHelper.MainWindow,
-                    ApplicationHelper.Metadata,
+                    (App.MainWindow, App.Metadata,
                     new ApplicationPackUri("/Images/TTSSynthesizer.png"));
 
                     aboutWindow.ShowDialog();

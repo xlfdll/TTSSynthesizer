@@ -32,7 +32,7 @@ namespace TTSSynthesizer
                         Filter = "Text Document (*.txt)|*.txt|All Files (*.*)|*.*"
                     };
 
-                    if (dlg.ShowDialog(ApplicationHelper.MainWindow) == true)
+                    if (dlg.ShowDialog(App.MainWindow) == true)
                     {
                         SpeechState.Current.Text = TextHelper.LoadTextFile(dlg.FileName);
                     }

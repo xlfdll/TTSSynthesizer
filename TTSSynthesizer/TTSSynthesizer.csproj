@@ -99,7 +99,6 @@
     <Compile Include="Commands\TextCommands.cs" />
     <Compile Include="Commands\GeneralCommands.cs" />
     <Compile Include="Data\SpeechState.cs" />
-    <Compile Include="Helpers\ApplicationHelper.cs" />
     <Compile Include="Helpers\TextHelper.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
