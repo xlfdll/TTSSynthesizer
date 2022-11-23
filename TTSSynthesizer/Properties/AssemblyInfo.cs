@@ -12,7 +12,7 @@ using Xlfdll;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Xlfdll Workstation")]
 [assembly: AssemblyProduct("Text-to-Speech Synthesizer")]
-[assembly: AssemblyCopyright("© 2016 Xlfdll Workstation")]
+[assembly: AssemblyCopyright("© 2009-2016 Xlfdll Workstation")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
